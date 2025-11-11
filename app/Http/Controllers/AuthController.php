@@ -17,7 +17,7 @@ class AuthController extends Controller
         $creds = $request->only('username', 'password');
 
         if (Auth::attempt($creds)) {
-            return redirect('/patients');
+            return view('home');
         }
         return back()->with('error', 'Username / Password Salah');
     }
